@@ -30,7 +30,7 @@ def retrieve_employee_name(employee_id):
     return response.json().get("name")
 
 
-def retrieve_assigned_tasks_count(employee_id):
+def retrieve_assigned_tasks(employee_id):
     """
     Retrieves the total number of tasks assigned to the employee.
     """
@@ -67,6 +67,6 @@ def print_employee_progress(employee_name, completed_tasks, assigned_tasks):
 if __name__ == "__main__":
     employee_id = sys.argv[1]
     employee_name = retrieve_employee_name(employee_id)
-    assigned_tasks = retrieve_assigned_tasks_count(employee_id)
+    assigned_tasks = retrieve_assigned_tasks(employee_id)
     completed_tasks = retrieve_completed_tasks(employee_id)
     print_employee_progress(employee_name, completed_tasks, assigned_tasks)
