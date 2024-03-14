@@ -5,7 +5,7 @@ Utilizes either the urllib or requests module to interact with the REST API
 Accepts an integer as a parameter, representing the employee ID.
 Output Format: The script must display the employee's TODO list progress
 in the following exact format:
-The first line should indicate the employee's name and their progress 
+The first line should indicate the employee's name and their progress
 with tasks, represented as (NUMBER_OF_DONE_TASKS/TOTAL_NUMBER_OF_TASKS):
 EMPLOYEE_NAME: Name of the employee.
 NUMBER_OF_DONE_TASKS: Number of completed tasks.
@@ -14,8 +14,8 @@ completed and non-completed tasks.
 The subsequent lines should display the titles of completed tasks,
 with one tabulation and one space before each task title.
 """
-import sys
 import requests
+import sys
 
 
 BASE_URL = "https://jsonplaceholder.typicode.com/users"
@@ -56,7 +56,10 @@ def print_employee_progress(employee_name, completed_tasks, assigned_tasks):
     """
     Prints the employee's task list progress.
     """
-    print(f"Employee {employee_name} is done with tasks({len(completed_tasks)}/{assigned_tasks}):")
+    print(
+        f"Employee {employee_name} is done with tasks("
+        f"{len(completed_tasks)}/{assigned_tasks}):"
+    )
     for task in completed_tasks:
         print(f"\t{task}")
 
