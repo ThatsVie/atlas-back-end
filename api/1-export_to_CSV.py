@@ -69,6 +69,9 @@ def print_employee_progress(employee_name, completed_tasks, assigned_tasks):
 
     with open('{}.csv'.format(employee_id), 'w') as csv_file:
         writer = csv.writer(csv_file, quoting=csv.QUOTE_ALL)
+        writer.writerow([
+            "USER_ID", "USERNAME", "TASK_COMPLETED_STATUS", "TASK_TITLE"
+        ])
         for task in completed_tasks:
             writer.writerow([employee_id, employee_name, task.get("completed"),
                             task.get("title")])
