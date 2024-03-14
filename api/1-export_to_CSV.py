@@ -59,34 +59,19 @@ def retrieve_completed_tasks(employee_id):
 
 def print_employee_progress(employee_name, completed_tasks, assigned_tasks):
     """
-    Prints the employee's task list progress.
+    Prints the employee's task list progress and exports it to CSV.
     """
-    print(
-        f"Employee {employee_name} is done with tasks("
-        f"{len(completed_tasks)}/{assigned_tasks}):"
-    )
+    print("Employee {} is done with tasks({}/{}):".format(employee_name,
+                                                          len(completed_tasks),
+                                                          len(assigned_tasks)))
     for task in completed_tasks:
-        print(f"\t{task['title']}")
-    return completed_tasks
+        print("\t {}".format(task))
 
-
-def export_to_csv(employee_id, employee_name, completed_tasks):
-    """
-    Exports completed tasks to a CSV file.
-    """
-    file_name = f"{employee_id}.csv"
-    with open(file_name, "w", newline="") as csvfile:
-        fieldnames = ["USER_ID", "USERNAME", "TASK_COMPLETED_STATUS", "TASK_TITLE"]
-        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-
-        writer.writeheader()
-        for task in completed_tasks:
-            writer.writerow({
-                "USER_ID": employee_id,
-                "USERNAME": employee_name,
-                "TASK_COMPLETED_STATUS": task["completed"],
-                "TASK_TITLE": task["title"]
-            })
+    with open('{}.csv'.format(employee_id), 'w') as csv_file:
+        writer = csv.writer(csv_file, quoting=csv.QUOTE_ALL)
+        for task in assigned_tasks:
+            writer.writerow([employee_id, employee_name, task.get("completed"),
+                            task.get("title")])
 
 
 if __name__ == "__main__":
@@ -94,5 +79,4 @@ if __name__ == "__main__":
     employee_name = retrieve_employee_name(employee_id)
     assigned_tasks = retrieve_assigned_tasks_count(employee_id)
     completed_tasks = retrieve_completed_tasks(employee_id)
-    completed_tasks = print_employee_progress(employee_name, completed_tasks, assigned_tasks)
-    export_to_csv(employee_id, employee_name, completed_tasks)
+    print_employee_progress(employee_name, completed_tasks, assigned_tasks)
