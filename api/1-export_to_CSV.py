@@ -63,13 +63,13 @@ def print_employee_progress(employee_name, completed_tasks, assigned_tasks):
     """
     print("Employee {} is done with tasks({}/{}):".format(employee_name,
                                                           len(completed_tasks),
-                                                          len(assigned_tasks)))
+                                                          assigned_tasks))
     for task in completed_tasks:
         print("\t {}".format(task))
 
     with open('{}.csv'.format(employee_id), 'w') as csv_file:
         writer = csv.writer(csv_file, quoting=csv.QUOTE_ALL)
-        for task in assigned_tasks:
+        for task in completed_tasks:
             writer.writerow([employee_id, employee_name, task.get("completed"),
                             task.get("title")])
 
@@ -77,6 +77,7 @@ def print_employee_progress(employee_name, completed_tasks, assigned_tasks):
 if __name__ == "__main__":
     employee_id = sys.argv[1]
     employee_name = retrieve_employee_name(employee_id)
-    assigned_tasks = retrieve_assigned_tasks_count(employee_id)
+    assigned_tasks_count = retrieve_assigned_tasks_count(employee_id)
     completed_tasks = retrieve_completed_tasks(employee_id)
-    print_employee_progress(employee_name, completed_tasks, assigned_tasks)
+    print_employee_progress(employee_name, completed_tasks, assigned_tasks_count)
+
