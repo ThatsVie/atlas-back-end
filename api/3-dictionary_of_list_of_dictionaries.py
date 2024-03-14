@@ -33,7 +33,7 @@ def export_to_json():
     """
     tasks_data = {}
 
-    for employee_id in range(1, 11):  
+    for employee_id in range(1, 11):
         tasks = retrieve_assigned_tasks(employee_id)
         employee_name = retrieve_employee_name(employee_id)
 
