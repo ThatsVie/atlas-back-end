@@ -18,14 +18,11 @@ import requests
 import sys
 
 
-BASE_URL = "https://jsonplaceholder.typicode.com/users"
-
-
 def retrieve_employee_name(employee_id):
     """
     Retrieves the name of the employee.
     """
-    url = f"{BASE_URL}/{employee_id}"
+    url = "{}/{}".format(base_url, employee_id)
     response = requests.get(url)
     return response.json().get("name")
 
@@ -34,7 +31,7 @@ def retrieve_assigned_tasks(employee_id):
     """
     Retrieves the total number of tasks assigned to the employee.
     """
-    url = f"{BASE_URL}/{employee_id}/todos"
+    url = "{}/{}/todos".format(base_url, employee_id)
     response = requests.get(url)
     return len(response.json())
 
@@ -44,7 +41,7 @@ def retrieve_completed_tasks(employee_id):
     Retrieves the list of tasks completed by the employee.
     """
     completed_tasks = []
-    url = f"{BASE_URL}/{employee_id}/todos"
+    url = "{}/{}/todos".format(base_url, employee_id)
     response = requests.get(url)
     for task in response.json():
         if task.get("completed"):
@@ -56,15 +53,15 @@ def print_employee_progress(employee_name, completed_tasks, assigned_tasks):
     """
     Prints the employee's task list progress.
     """
-    print(
-        f"Employee {employee_name} is done with tasks("
-        f"{len(completed_tasks)}/{assigned_tasks}):"
-    )
+    print("Employee {} is done with tasks({}/{}):".format(employee_name,
+                                                          len(completed_tasks),
+                                                          assigned_tasks))
     for task in completed_tasks:
-        print(f"\t{task}")
+        print("\t {}".format(task))
 
 
 if __name__ == "__main__":
+    base_url = "https://jsonplaceholder.typicode.com/users"
     employee_id = sys.argv[1]
     employee_name = retrieve_employee_name(employee_id)
     assigned_tasks = retrieve_assigned_tasks(employee_id)
