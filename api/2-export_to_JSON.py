@@ -80,7 +80,7 @@ def export_to_json(employee_id, assigned_tasks, employee_name):
                     "task": task.get("title"),
                     completion_status: task.get(completion_status),
                     "username": employee_name
-                } 
+                }
                 for task in assigned_tasks
             ]
         }, json_file)
