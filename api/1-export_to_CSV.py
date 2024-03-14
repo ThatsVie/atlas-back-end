@@ -84,4 +84,3 @@ if __name__ == "__main__":
     assigned_tasks = retrieve_assigned_tasks(employee_id)
     completed_tasks = retrieve_completed_tasks(employee_id)
     print_employee_progress(employee_name, completed_tasks, assigned_tasks)
-
