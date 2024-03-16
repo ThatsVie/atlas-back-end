@@ -1,6 +1,7 @@
 # API
 
-The API project comprises four Python scripts designed to interact with a mock REST API, managing tasks for employees. These scripts offer various features, including exporting tasks for specific users and all employees to JSON files. Structured to streamline task management and facilitate data export for further analysis or integration with other systems, the project simplifies the process of fetching, organizing, and exporting data in different formats using Python.
+The API project interacts with a mock REST API available at [https://jsonplaceholder.typicode.com/](https://jsonplaceholder.typicode.com/). It comprises four Python scripts designed to manage tasks for employees, offering various features including exporting tasks for specific users and all employees to JSON files. Structured to streamline task management and facilitate data export for further analysis or integration with other systems, the project simplifies the process of fetching, organizing, and exporting data in different formats using Python.
+
 
 ## Tasks
 
