@@ -29,24 +29,24 @@ The Python script **3-dictionary_of_list_of_dictionaries.py** extends the functi
 
 ## Usage
 
-1. Clone the repository:
+### Clone the repository:
 
     ```bash
     git clone https://github.com/ThatsVie/atlas-back-end.git
     ```
 
-2. Navigate to the project directory:
+### Navigate to the project directory:
 
     ```bash
     cd api
     ```
 
-3. Install the required dependencies:
+### Install the required dependencies:
 
     ```bash
     pip install requests
     ```
-**Task 0**
+### Task 0
 Input this command:
 ```bash
 python3 0-gather_data_from_an_API.py 2
