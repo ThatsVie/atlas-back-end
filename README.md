@@ -47,6 +47,7 @@ The Python script **3-dictionary_of_list_of_dictionaries.py** extends the functi
     pip install requests
     ```
 ### Task 0
+
 Input this command:
 ```bash
 python3 0-gather_data_from_an_API.py 2
@@ -75,6 +76,7 @@ The command python3 0-gather_data_from_an_API.py 4 | tr " " "S" | tr "\t" "T" ex
 ![Screenshot 2024-03-16 133950](https://github.com/ThatsVie/atlas-back-end/assets/143755961/451649d1-61eb-4c45-b3a5-065725348fb0)
 
 ### Task 1
+
 Input this command:
 ```bash
 python3 1-export_to_CSV.py 2
@@ -82,7 +84,7 @@ python3 1-export_to_CSV.py 2
 
 The command python3 1-export_to_CSV.py 2 executes the Python script 1-export_to_CSV.py with the argument 2, which specifies the user ID whose tasks will be exported to a CSV file.
 
-Then, input this command
+Then, input this command:
 ```bash
 cat 2.csv
 ```
@@ -90,3 +92,42 @@ cat 2.csv
 The command cat 2.csv displays the contents of the generated CSV file in the terminal, showing the tasks owned by employee Antonette along with their completion status and titles, each separated by commas.
 
 ![Screenshot 2024-03-16 135421](https://github.com/ThatsVie/atlas-back-end/assets/143755961/0c565268-9c2f-46e2-b3f0-95eadb30813e)
+
+### Task 2
+
+Input this command:
+
+```bash
+python3 2-export_to_JSON.py 2
+```
+This command executes the Python script 2-export_to_JSON.py with the argument 2, indicating the employee ID. The script retrieves tasks associated with employee ID 2 from the API and exports them into a JSON file named 2.json.
+
+Then, input this command:
+
+```bash
+cat 2.json
+```
+The command displays the contents of the JSON file named 2.json. It contains task information associated with employee ID 2, where each task is represented as an object with properties such as task title (task), completion status (completed), and username (username). The tasks are organized under the key 2, indicating the employee ID, and each task object contains details such as the task title, completion status (true or false), and the username of the employee (Antonette).
+
+![Screenshot 2024-03-16 150322](https://github.com/ThatsVie/atlas-back-end/assets/143755961/932f2570-3caf-4ea5-8158-9560bd9003c5)
+
+### Task 3
+
+Input this command:
+```bash
+python3 3-dictionary_of_list_of_dictionaries.py
+```
+
+This command executes the Python script 3-dictionary_of_list_of_dictionaries.py, which is designed to export task data in JSON format for all tasks from all employees. It retrieves task information from the specified REST API, organizes the tasks under each user ID, and exports the data into a JSON file named todo_all_employees.json. This file contains a dictionary where each key represents a user ID, and the corresponding value is a list of dictionaries, each containing task details such as the task title, completion status, and username.
+
+Then, input this command:
+```bash
+cat todo_all_employees.json
+```
+
+This command displays the contents of the JSON file named todo_all_employees.json. This file contains task data for all employees in a structured format. Each user ID serves as a key in the JSON dictionary, and its corresponding value is a list of dictionaries. Each dictionary represents a task, containing information such as the task title, completion status, and username associated with that task.
+
+![Screenshot 2024-03-16 150759](https://github.com/ThatsVie/atlas-back-end/assets/143755961/59bccd5a-3130-4fe2-bb12-0170ae901bb7)
+![Screenshot 2024-03-16 150834](https://github.com/ThatsVie/atlas-back-end/assets/143755961/e8d519da-4f3a-49a1-9749-b0171b6579aa)
+![Screenshot 2024-03-16 150852](https://github.com/ThatsVie/atlas-back-end/assets/143755961/bb2d8ce9-4973-46a3-a325-ac05fbfe4c64)
+![Screenshot 2024-03-16 150911](https://github.com/ThatsVie/atlas-back-end/assets/143755961/b97c637e-2e08-42be-8eb3-13ff29ec4169)
