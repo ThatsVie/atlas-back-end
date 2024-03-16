@@ -31,21 +31,21 @@ The Python script **3-dictionary_of_list_of_dictionaries.py** extends the functi
 
 ### Clone the repository:
 
-    ```bash
-    git clone https://github.com/ThatsVie/atlas-back-end.git
-    ```
+```bash
+git clone https://github.com/ThatsVie/atlas-back-end.git
+```
 
 ### Navigate to the project directory:
 
-    ```bash
-    cd api
-    ```
+```bash
+cd api
+```
 
 ### Install the required dependencies:
 
-    ```bash
-    pip install requests
-    ```
+```bash
+pip install requests
+```
 ### Task 0
 
 Input this command:
