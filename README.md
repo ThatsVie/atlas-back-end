@@ -134,7 +134,6 @@ This command displays the contents of the JSON file named todo_all_employees.jso
 
 To replicate the functionality of your Python script using Postman, follow these steps:
 
-**Task 0**
 **Step 1: Open Postman**
 
 If you haven't already, open Postman on your system.
@@ -194,4 +193,3 @@ Send the request and count the number of tasks in the response JSON array. This 
 
 ![Screenshot 2024-03-17 143044](https://github.com/ThatsVie/atlas-back-end/assets/143755961/299d432c-cab8-4de0-a87d-54c48d707121)
 
-**Task 1**
