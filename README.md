@@ -128,6 +128,70 @@ cat todo_all_employees.json
 This command displays the contents of the JSON file named todo_all_employees.json. This file contains task data for all employees in a structured format. Each user ID serves as a key in the JSON dictionary, and its corresponding value is a list of dictionaries. Each dictionary represents a task, containing information such as the task title, completion status, and username associated with that task.
 
 ![Screenshot 2024-03-16 150759](https://github.com/ThatsVie/atlas-back-end/assets/143755961/59bccd5a-3130-4fe2-bb12-0170ae901bb7)
-![Screenshot 2024-03-16 150834](https://github.com/ThatsVie/atlas-back-end/assets/143755961/e8d519da-4f3a-49a1-9749-b0171b6579aa)
-![Screenshot 2024-03-16 150852](https://github.com/ThatsVie/atlas-back-end/assets/143755961/bb2d8ce9-4973-46a3-a325-ac05fbfe4c64)
-![Screenshot 2024-03-16 150911](https://github.com/ThatsVie/atlas-back-end/assets/143755961/b97c637e-2e08-42be-8eb3-13ff29ec4169)
+
+
+## Usage - Using Postman
+
+To replicate the functionality of your Python script using Postman, follow these steps:
+
+**Task 0**
+**Step 1: Open Postman**
+
+If you haven't already, open Postman on your system.
+
+**Step 2: Create a New Request**
+Click on the "+"button in the top left corner.
+![Screenshot 2024-03-17 141231](https://github.com/ThatsVie/atlas-back-end/assets/143755961/2a35ebc7-fc32-41bc-90d0-dd9379dcd390)
+
+Choose the HTTP method "GET".
+
+Enter the URL for the API endpoint. For example:
+```bash
+https://jsonplaceholder.typicode.com/users/{employee_id}
+```
+Replace {employee_id} with the actual ID of the employee you want to retrieve TODO list progress for.
+In this case we will look at employee_id **2**
+
+```bash
+https://jsonplaceholder.typicode.com/users/2
+```
+![Screenshot 2024-03-17 142026](https://github.com/ThatsVie/atlas-back-end/assets/143755961/2856d31f-a4ce-4b8d-8708-d66cb6f1197f)
+
+**Step 3: Send the Request**
+
+Click on the "Send" button to send the request to the API endpoint.
+Postman will make the request and display the response in the main window.
+
+![Screenshot 2024-03-17 142336](https://github.com/ThatsVie/atlas-back-end/assets/143755961/569f254a-afba-435b-884b-09a79390d9b4)
+
+**Step 4: Retrieve Employee Name**
+
+Once you receive the response, check the JSON body to find the employee's name.
+You can use this name for the output.
+
+
+Now, try it for employee_id **4**
+
+```bash
+https://jsonplaceholder.typicode.com/users/4
+```
+![Screenshot 2024-03-17 143639](https://github.com/ThatsVie/atlas-back-end/assets/143755961/4d3c5b70-6cd5-4f33-b47c-fcfb1088105c)
+
+
+**Step 5: Retrieve Total Number of Tasks Assigned**
+To retrieve the total number of tasks assigned to the employee, create another request.
+Change the URL to:
+```bash
+https://jsonplaceholder.typicode.com/users/{employee_id}/todos
+```
+Replace {employee_id} with the actual ID of the employee you want to retrieve TODO list progress for.
+In this case we will look at employee_id **2**
+
+```bash
+https://jsonplaceholder.typicode.com/users/2/todos
+```
+Send the request and count the number of tasks in the response JSON array. This count represents the total number of tasks assigned.
+
+![Screenshot 2024-03-17 143044](https://github.com/ThatsVie/atlas-back-end/assets/143755961/299d432c-cab8-4de0-a87d-54c48d707121)
+
+**Task 1**
